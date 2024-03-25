@@ -53,8 +53,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-            // User::destroy($id);
-            // return redirect()->back()->withSuccess('User Deleted successfully.');
+            User::destroy($id);
+            return redirect()->back()->withSuccess('User Deleted successfully.');
     }
             
 
@@ -87,7 +87,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::destroy($id);
-        return redirect()->back()->withSuccess('User Deleted successfully.');
+        // User::destroy($id);
+        // return redirect()->back()->withSuccess('User Deleted successfully.');
     }
 }

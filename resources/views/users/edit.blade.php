@@ -8,16 +8,16 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>User Edit</title>
+    <title>Edit User</title>
   </head>
   <body>
-  <section class="container mt-5">
+  <section class="px-5 my-5 mt-5" >
     @if(session('success'))
     <div class="alert alert-success">{{session('success')}}</div> 
     @endif
     <div class="card">
     <div class="card-header">
-    User Create
+    <h5>Edit User</h5>
     </div>
     <div class="card-body">
     <form action="{{ route('user.update', $data->id) }}" method="post">
@@ -27,7 +27,7 @@
     <label>Name</label>
     <input type="text" name="name" class="form-control" value="{{$data->name}}">
     @error('name')<p class="text text-danger">{{ $message }}</p> @enderror
-    </div>  
+    </div>
     <div class="form-group">
     <label>Email Address</label>
     <input type="email" name="email" class="form-control" value="{{$data->email}}">
@@ -40,6 +40,7 @@
     </div>
     <div>
     <button type="submit" class="btn btn-primary">Save</button>
+    <a href="{{ route('user.index') }}" class="btn btn-primary">View Users</a>
     </div>
     </form>
     </div>
@@ -47,7 +48,6 @@
     </div>
     </div>
   </section>
-
 
 
 

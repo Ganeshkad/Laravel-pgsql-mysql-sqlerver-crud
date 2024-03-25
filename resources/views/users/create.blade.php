@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Create User</title>
   </head>
   <body>
   <section class="container mt-5">
@@ -17,7 +17,7 @@
     @endif
     <div class="card">
     <div class="card-header">
-    User Create
+    <h5>Create User</h5>
     </div>
     <div class="card-body">
 
@@ -41,6 +41,7 @@
     </div>
     <div>
     <button type="submit" class="btn btn-primary">Save</button>
+    <a href="{{ route('user.index') }}" class="btn btn-primary">View User</a>
     </div>
     </form>
     </div>

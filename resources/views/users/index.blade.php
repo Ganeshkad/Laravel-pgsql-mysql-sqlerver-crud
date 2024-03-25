@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,34 +8,38 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Users</title>
   </head>
   <body>
   <section class="container mt-5">
     @if(session('success'))
     <div class="alert alert-success">{{session('success')}}</div> 
     @endif
+    <div class="card">
+    <div class="card-header">
+    <h5>Users Details<a href="{{ route('user.create') }}" class="btn btn-primary float-right">Create User</a></h5>
+    </div>
+    </div>
     <table class="table table-bordered">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Id</th>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
-      <th scope="col">Action</th>
+      <th scope="col">Action
+      </th>
     </tr>
   </thead>
   <tbody>
         @foreach($data as $key => $val)
         <tr>
         <th scope="row">{{++$key}}</th>
-        <td>{{ $val->id }}</td>
         <td>{{ $val->name }}</td>
         <td>{{ $val->email }}</td>
-        <td>
+        <td> 
         <a href="{{ route('user.edit',$val->id) }}" class="btn btn-secondary">Edit
         </a>
-        <a href="{{ route('user.destroy',$val->id) }}" class="btn btn-danger">Delete
+        <a href="{{ route('user.show',$val->id) }}" class="btn btn-danger">Delete
         </a>
         </td>
         @endforeach
